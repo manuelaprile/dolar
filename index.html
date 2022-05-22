@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Precio del dólar</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Precio del dólar</h1>
+    </header>
+    <div class="container-price">
+      <h1>Calculadora</h1>
+      <div class="calculadora-container">
+        <div class="calculadora">
+          <h3>Seleccione un tipo de dólar</h3>
+          <select id="selector" class="form-select">
+            <option>Seleccione el dólar</option>
+            <option value="oficial">Oficial</option>
+            <option value="blue">Blue</option>
+            <option value="liqui">Contado con liqui</option>
+          </select>
+          <div class="result">
+            <label>Los datos del dólar son: </label>
+          </div>
+          <button class="btn-limpiar">Limpiar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
