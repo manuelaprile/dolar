@@ -1,7 +1,7 @@
 const seleccionar = () => {
   let selector = document.querySelector("#selector").value;
-  const dolares = ['Dolar Oficial', 'Dolar Blue', 'Dolar Soja', 'Dolar Contado con Liqui', 'Dolar turista', 'Bitcoin', 'Dolar Bolsa', 'Dolar cotiza'];
   let resultado = document.querySelector('.result');
+  let resultados = document.querySelector('.resultados');
   let dolar;
   let btn = document.querySelector('.btn-limpiar');
 
@@ -17,15 +17,9 @@ const seleccionar = () => {
         (selector === 'Dolar Bolsa') ? dolar = 'Dolar Bolsa' : '';
         (selector === 'Dolar Turista') ? dolar = 'Dolar turista' : '';
         if (dolar === i.casa.nombre) {
-          var compra = document.createElement('p');
-          var venta = document.createElement('p');
-          compra.textContent = "Compra: " + i.casa.compra;
-          venta.textContent = "Venta: " + i.casa.venta;
-          resultado.appendChild(compra);
-          resultado.appendChild(venta);
+          resultados.innerHTML = `Compra: ${i.casa.compra} <br> Venta: ${i.casa.venta}`;
           btn.addEventListener('click', () => {
-            resultado.appendChild(compra).remove();
-            resultado.appendChild(venta).remove();
+            resultados.innerHTML = '';
           });
         }
       }

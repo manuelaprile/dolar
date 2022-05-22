@@ -88,9 +88,8 @@ header h1{
   font-family: var(--font);
 }
 
-.resultado{
-  font-weight: bold;
-  color: var(--letters);
+.resultados{
+  margin-top: 10px;
 }
 
 .btn-limpiar{
