@@ -37,6 +37,10 @@ header h1{
   text-align: center;
 }
 
+.signo{
+  color: var(--letters);
+}
+
 .container-price{
   width: 100%;
   background-color: var(--header);

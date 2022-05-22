@@ -1,6 +1,5 @@
 const seleccionar = () => {
   let selector = document.querySelector("#selector").value;
-  let resultado = document.querySelector('.result');
   let resultados = document.querySelector('.resultados');
   let dolar;
   let btn = document.querySelector('.btn-limpiar');
@@ -17,7 +16,7 @@ const seleccionar = () => {
         (selector === 'Dolar Bolsa') ? dolar = 'Dolar Bolsa' : '';
         (selector === 'Dolar Turista') ? dolar = 'Dolar turista' : '';
         if (dolar === i.casa.nombre) {
-          resultados.innerHTML = `Compra: ${i.casa.compra} <br> Venta: ${i.casa.venta}`;
+          resultados.innerHTML = `Compra: <span class="signo">$</span>${i.casa.compra} <br> Venta: <span class="signo">$</span>${i.casa.venta}`;
           btn.addEventListener('click', () => {
             resultados.innerHTML = '';
           });
