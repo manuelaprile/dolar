@@ -5,18 +5,16 @@ const seleccionar = () => {
   let btn = document.querySelector('.btn-limpiar');
 
   //Peticion con AXIOS
-  axios.get('https://www.dolarsi.com/api/api.php?type=valoresprincipales')
+  axios.get('https://dolarapi.com/v1/dolares')
     .then(function (response) {
       for (let i of response.data) {
-        (selector === 'Dolar Oficial') ? dolar = 'Dolar Oficial' : '';
-        (selector === 'Dolar Blue') ? dolar = 'Dolar Blue' : '';
-        (selector === 'Dolar Contado con Liqui') ? dolar = 'Dolar Contado con Liqui' : '';
-        (selector === 'Bitcoin') ? dolar = 'Bitcoin' : '';
-        (selector === 'Dolar Soja') ? dolar = 'Dolar Soja' : '';
-        (selector === 'Dolar Bolsa') ? dolar = 'Dolar Bolsa' : '';
-        (selector === 'Dolar Turista') ? dolar = 'Dolar turista' : '';
-        if (dolar === i.casa.nombre) {
-          resultados.innerHTML = `Compra: <span class="signo">$</span>${i.casa.compra} <br> Venta: <span class="signo">$</span>${i.casa.venta}`;
+        (selector === 'oficial') ? dolar = 'Oficial' : '';
+        (selector === 'blue') ? dolar = 'Blue' : '';
+        (selector === 'contadoconliqui') ? dolar = 'Contado con liquidación' : '';
+        (selector === 'tarjeta') ? dolar = 'Tarjeta' : '';
+        (selector === 'cripto') ? dolar = 'Cripto' : '';
+        if (dolar === i.nombre) {
+          resultados.innerHTML = `Compra: <span class="signo">$</span>${i.compra} <br> Venta: <span class="signo">$</span>${i.venta}`;
           btn.addEventListener('click', () => {
             resultados.innerHTML = '';
           });
